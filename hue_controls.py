@@ -2,6 +2,7 @@ from rgb_cie import Converter
 import qhue
 import requests
 import math
+import time
 
 
 username = 'ejLH4WtpkUuagMV4epRQRxA04uyBnQaesVnxAMxF'
@@ -48,7 +49,7 @@ class Lamp():
         
         
         if brightnessPercent < 0.05:
-            requests.put(self.url, data='{ "on": false, "transitiontime" : 0}')
+            requests.put(self.url, data='{ "on": false, "transitiontime" : 1}')
             self.on = False
         else:
             if self.on == True:
@@ -58,4 +59,5 @@ class Lamp():
                 self.on = True
         
         self.xy = xyval
+        time.sleep(0.1)#wait for transition to complete
         

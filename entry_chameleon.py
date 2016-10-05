@@ -14,4 +14,3 @@ if __name__ == '__main__':
         ms_spent = (current_time - last_tick) * 1000.0
         #print('This tick took {} ms. Tick rate = {}'.format(ms_spent, 1000.0 / ms_spent))
         last_tick = current_time
-        #time.sleep(1/15.0)
